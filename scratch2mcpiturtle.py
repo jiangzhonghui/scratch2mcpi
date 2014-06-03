@@ -58,6 +58,7 @@ def listen(s, mc):
   turtleY = 0
   turtleZ = 0
   penBlockId = block.DIRT.id
+  penBlockData = 0
   mc = minecraft.Minecraft.create()
   pos = mc.player.getPos()
   steve = minecraftturtle.MinecraftTurtle(mc,pos)
@@ -91,37 +92,40 @@ def listen(s, mc):
             steve.sety(turtleY)
             steve.setz(turtleZ)
             print "setpositionTurtle: %.1f %.1f %.1f" % (turtleX, turtleY, turtleZ)
-	elif msg[1] == 'forward':
+	elif msg[1] == 'setForward':
           if is_number(mc, 'forward', forward) :
 	    steve.forward(forward)          		  
 	    print "steve.forward: (%d)" % (forward)
-	elif msg[1] == 'backward':
+	elif msg[1] == 'setBackward':
           if is_number(mc, 'backward', backward) :
 	    steve.backward(backward)          		  
 	    print "steve.backward: (%d)" % (backward)
-	elif msg[1] == 'right':
+	elif msg[1] == 'setRight':
           if is_number(mc, 'right', right) :
 	    steve.right(right)          		  
 	    print "steve.right: (%d)" % (right)
-	elif msg[1] == 'left':
+	elif msg[1] == 'setLeft':
           if is_number(mc, 'left', left) :
 	    steve.left(left)          		  
 	    print "steve.left: (%d)" % (left)
-	elif msg[1] == 'up':
+	elif msg[1] == 'setUp':
           if is_number(mc, 'up', up) :
 	    steve.up(up)          		  
 	    print "steve.up: (%d)" % (up)
-	elif msg[1] == 'down':
+	elif msg[1] == 'setDown':
           if is_number(mc, 'down', down) :
 	    steve.down(down)          		  
 	    print "steve.down: (%d)" % (down)
-	elif msg[1] == 'speed':
+	elif msg[1] == 'setSpeed':
           if is_number(mc, 'speed', speed) :
 	    steve.speed(speed)          		  
 	    print "steve.speed: (%d)" % (speed)
 	elif msg[1] == 'setPenBlockId':
 	    steve.penblock(penBlockId)          		  
 	    print "steve.penblock: (%s)" % (penBlockId)
+	elif msg[1] == 'setPenBlockData':
+	    steve.penblock(penBlockId, penBlockData)          		  
+	    print "steve.penblock: (%s, %d)" % (penBlockId, penBlockData)
         # Minecraft Graphics Turtle(End)
 	elif msg[1] == 'setBlocks':
           if (is_number(mc, 'mcpiX0', mcpiX0) and is_number(mc, 'mcpiY0', mcpiY0) and is_number(mc, 'mcpiZ0', mcpiZ0) and is_number(mc, 'mcpiX1', mcpiX1) and is_number(mc, 'mcpiY1', mcpiY1) and is_number(mc, 'mcpiZ1', mcpiZ1) and is_number(mc, 'blockTypeId', blockTypeId) and is_number(mc, 'blockData', blockData)):
@@ -189,6 +193,7 @@ def listen(s, mc):
         turtleY = msg[1].get('turtleY', turtleY)
         turtleZ = msg[1].get('turtleZ', turtleZ)
         penBlockId = msg[1].get('penBlockId', penBlockId)
+        penBlockData = msg[1].get('penBlockData', penBlockData)
         # Minecraft Graphics Turtle(Start)
 
 
@@ -215,19 +220,20 @@ def main():
       s.broadcast("pollBlockHits")
       s.broadcast("reset")
       # Minecraft Graphics Turtle(Start)
-      s.broadcast("forward")
-      s.broadcast("backward")
-      s.broadcast("right")
-      s.broadcast("left")
-      s.broadcast("up")
-      s.broadcast("down")
-      s.broadcast("speed")
-      s.broadcast("turtleX")
-      s.broadcast("turtleY")
-      s.broadcast("turtleZ")
+      s.broadcast("setForward")
+      s.broadcast("setBackward")
+      s.broadcast("setRight")
+      s.broadcast("setLeft")
+      s.broadcast("setUp")
+      s.broadcast("setDown")
+      s.broadcast("setSpeed")
+      s.broadcast("setTurtleX")
+      s.broadcast("setTurtleY")
+      s.broadcast("setTurtleZ")
       s.broadcast("setPosTurtle")
       s.broadcast("initTurtle")
       s.broadcast("setPenBlockId")
+      s.broadcast("setPenBlockData")
       s.broadcast("penup")
       s.broadcast("pendown")
       # Minecraft Graphics Turtle(End)
