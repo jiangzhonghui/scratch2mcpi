@@ -25,3 +25,17 @@ Install Scratch2MCPI
 ## Requirements
 
 [scratchpy](https://github.com/pilliq/scratchpy)
+
+## Scratch2MCPITurtle(Scratch2MinecraftPi With [Minecraft Graphics Turtle](http://www.stuffaboutcode.com/2014/05/minecraft-graphics-turtle.html)
+
+## Getting Started
+
+1. Install Scratch2MCPI. 
+2. Git Clone. -> $ cd ~ ; git clone https://github.com/martinohanlon/minecraft-turtle.git
+3. Copy file. -> $ cp minecraft-turtle/minecraftturtle.py scratch2mcpi/
+4. Run the script. -> $ python scratch2mcpiturtle.py
+
+## Requirements
+
+[Minecraft Graphics Turtle](https://github.com/martinohanlon/minecraft-turtle)
+
