@@ -33,7 +33,8 @@ Install Scratch2MCPI
 1. Install Scratch2MCPI. 
 2. Git Clone. -> $ cd ~ ; git clone https://github.com/martinohanlon/minecraft-turtle.git
 3. Copy file. -> $ cp minecraft-turtle/minecraftturtle.py scratch2mcpi/
-4. Run the script. -> $ python scratch2mcpiturtle.py
+4. Edit minecraftturtle.py. -> from "import minecraft" to "import mcpi.minecraft as minecraft" and from "import block" to "import mcpi.block as block"
+6. Run the script. -> $ python scratch2mcpiturtle.py
 
 ## Requirements
 
