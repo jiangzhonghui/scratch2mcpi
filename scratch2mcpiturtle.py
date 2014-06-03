@@ -6,7 +6,7 @@ import gettext
 import scratch
 import mcpi.minecraft as minecraft
 import minecraftturtle
-import block
+import mcpi.block as block
 import time
 
 VERSION = "1.0.3a"
