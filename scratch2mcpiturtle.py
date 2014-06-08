@@ -6,10 +6,11 @@ import gettext
 import scratch
 import mcpi.minecraft as minecraft
 import minecraftturtle
+import minecraftstuff
 import mcpi.block as block
 import time
 
-VERSION = "1.0.3a"
+VERSION = "1.0.3b"
 localedir = os.path.join(os.path.dirname(__file__), 'locale')
 _ = gettext.translation(domain = 'scratch2mcpi', localedir = localedir, fallback = True).ugettext
 
@@ -64,6 +65,16 @@ def listen(s, mc):
   steve = minecraftturtle.MinecraftTurtle(mc,pos)
   spos = steve.position
   # Minecraft Graphics Turtle(End)
+  # Minecraft Stuff(Start)
+  radius = 0
+  x1 = 0
+  y1 = 0
+  z1 = 0
+  shapePoints = []
+  fill = True
+  mcdrawing = minecraftstuff.MinecraftDrawing(mc)
+  # Minecraft Stuff(End)
+
 
   for msg in _listen(s):
     if (msg):
@@ -87,7 +98,6 @@ def listen(s, mc):
 	    print "steve.__init__"
         elif msg[1] == 'setPosTurtle':
           if (is_number(mc, "turtleX", turtleX) and is_number(mc, "turtleY", turtleY) and is_number(mc, "turtleZ", turtleZ)): 
-            # steve.setposition(turtleX, turtleY, turtleZ)
             steve.setx(turtleX)
             steve.sety(turtleY)
             steve.setz(turtleZ)
@@ -127,6 +137,39 @@ def listen(s, mc):
 	    steve.penblock(penBlockId, penBlockData)          		  
 	    print "steve.penblock: (%s, %d)" % (penBlockId, penBlockData)
         # Minecraft Graphics Turtle(End)
+        # Minecraft Stuff(Start)
+	elif msg[1] == 'setRadius':
+          if is_number(mc, 'radius', radius) :
+	    radius = radius
+	    print "setRadius: (%d)" % (radius)
+	elif msg[1] == 'drawLine':
+	    mcdrawing.drawLine(int(x1),int(y1),int(z1),int(turtleX),int(turtleY),int(turtleZ),blockTypeId, blockData)          		  
+	    print "mcdrawing.drawLine: (%d, %d, %d, %d, %d, %d, %d, %d)" % (x1,y1,z1,turtleX,turtleY,turtleZ,blockTypeId, blockData)
+	elif msg[1] == 'drawSphere':
+	    mcdrawing.drawSphere(turtleX,turtleY,turtleZ,radius,blockTypeId, blockData)          		  
+	    print "mcdrawing.drawSphere: (%d, %d, %d, %d, %d, %d)" % (x,y,z,radius,blockTypeId, blockData)
+	elif msg[1] == 'drawCircle':
+	    mcdrawing.drawCircle(turtleX,turtleY,turtleZ,radius,blockTypeId, blockData)          		  
+	    print "mcdrawing.drawCircle: (%d, %d, %d, %d, %d, %d)" % (x,y,z,radius,blockTypeId, blockData)
+	elif msg[1] == 'resetShapePoints':
+	    shapePoints = []
+            mcdrawing = minecraftstuff.MinecraftDrawing(mc)
+	elif msg[1] == 'setShapePoints':
+	    shapePoints.append(minecraft.Vec3(int(x1),int(y1),int(z1)))
+	    print "append.shapePoints:"
+	    print ' '.join(str(p) for p in shapePoints)
+	elif msg[1] == 'drawFace':
+	    if (fill == 'True'):
+		    fillFlag = True
+            elif (fill == 'False'):
+		    fillFlag = False
+	    mcdrawing.drawFace(shapePoints, fillFlag, blockTypeId)          		  
+	    #print "mcdrawing.drawFace: (%d, %d, %d)" % (shapePoints,fill,blockTypeId )
+	    print "mcdrawing.drawFace:"
+	    print ' '.join(str(p) for p in shapePoints)
+	    print(fill)
+	    print(blockTypeId)
+        # Minecraft Stuff(ENd)
 	elif msg[1] == 'setBlocks':
           if (is_number(mc, 'mcpiX0', mcpiX0) and is_number(mc, 'mcpiY0', mcpiY0) and is_number(mc, 'mcpiZ0', mcpiZ0) and is_number(mc, 'mcpiX1', mcpiX1) and is_number(mc, 'mcpiY1', mcpiY1) and is_number(mc, 'mcpiZ1', mcpiZ1) and is_number(mc, 'blockTypeId', blockTypeId) and is_number(mc, 'blockData', blockData)):
             mc.setBlocks(mcpiX0, mcpiY0, mcpiZ0, mcpiX1, mcpiY1, mcpiZ1, blockTypeId, blockData)
@@ -195,6 +238,13 @@ def listen(s, mc):
         penBlockId = msg[1].get('penBlockId', penBlockId)
         penBlockData = msg[1].get('penBlockData', penBlockData)
         # Minecraft Graphics Turtle(Start)
+        # Minecraft Stuff(Start)
+        radius = msg[1].get('radius', radius)
+        fill = msg[1].get('fill', fill)
+        x1 = msg[1].get('x1', x1)
+        y1 = msg[1].get('y1', y1)
+        z1 = msg[1].get('z1', z1)
+        # Minecraft Stuff(End)
 
 
 def main():
@@ -237,6 +287,14 @@ def main():
       s.broadcast("penup")
       s.broadcast("pendown")
       # Minecraft Graphics Turtle(End)
+      # Minecraft Stuff(Start)
+      s.broadcast("drawSphere")
+      s.broadcast("drawCircle")
+      s.broadcast("drawLine")
+      s.broadcast("drawFace")
+      s.broadcast("resetShapePoints")
+      s.broadcast("setShapePoints")
+      # Minecraft Stuff(End)
 
       listen(s, mc)
     time.sleep(5)
