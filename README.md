@@ -26,17 +26,19 @@ Install Scratch2MCPI
 
 [scratchpy](https://github.com/pilliq/scratchpy)
 
-## Scratch2MCPITurtle(Scratch2MinecraftPi With [Minecraft Graphics Turtle](http://www.stuffaboutcode.com/2014/05/minecraft-graphics-turtle.html)
+## Scratch2MCPITurtle(Scratch2MinecraftPi With [Minecraft Graphics Turtle](http://www.stuffaboutcode.com/2014/05/minecraft-graphics-turtle.html) + [Minecraft Stuff](https://github.com/martinohanlon/minecraft-stuff)
+
+## Installation
+
+Make file [install.sh](https://gist.github.com/naominix/976e6b451ff861460b86) in the /home/pi/ directory.
 
 ## Getting Started
 
-1. Install Scratch2MCPI. 
-2. Git Clone. -> $ cd ~ ; git clone https://github.com/martinohanlon/minecraft-turtle.git
-3. Copy file. -> $ cp minecraft-turtle/minecraftturtle.py scratch2mcpi/
-4. Edit minecraftturtle.py. -> from "import minecraft" to "import mcpi.minecraft as minecraft" and from "import block" to "import mcpi.block as block"
-6. Run the script. -> $ python scratch2mcpiturtle.py
+1. Install Scratch2MCPI with MGT + MS by install.sh. 
+2. Run the script. -> $ python scratch2mcpiturtle.py
 
 ## Requirements
 
 [Minecraft Graphics Turtle](https://github.com/martinohanlon/minecraft-turtle)
+[Minecraft Stuff](https://github.com/martinohanlon/minecraft-stuff)
 
