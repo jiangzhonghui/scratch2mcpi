@@ -138,10 +138,6 @@ def listen(s, mc):
 	    print "steve.penblock: (%s, %d)" % (penBlockId, penBlockData)
         # Minecraft Graphics Turtle(End)
         # Minecraft Stuff(Start)
-	elif msg[1] == 'setRadius':
-          if is_number(mc, 'radius', radius) :
-	    radius = radius
-	    print "setRadius: (%d)" % (radius)
 	elif msg[1] == 'drawLine':
 	    mcdrawing.drawLine(int(x1),int(y1),int(z1),int(turtleX),int(turtleY),int(turtleZ),blockTypeId, blockData)          		  
 	    print "mcdrawing.drawLine: (%d, %d, %d, %d, %d, %d, %d, %d)" % (x1,y1,z1,turtleX,turtleY,turtleZ,blockTypeId, blockData)
@@ -150,7 +146,7 @@ def listen(s, mc):
 	    print "mcdrawing.drawSphere: (%d, %d, %d, %d, %d, %d)" % (x,y,z,radius,blockTypeId, blockData)
 	elif msg[1] == 'drawCircle':
 	    mcdrawing.drawCircle(turtleX,turtleY,turtleZ,radius,blockTypeId, blockData)          		  
-	    print "mcdrawing.drawCircle: (%d, %d, %d, %d, %d, %d)" % (x,y,z,radius,blockTypeId, blockData)
+	    print "mcdrawing.drawCircle: (%d, %d, %d, %d, %d, %d)" % (turtleX,turtleY,turtleZ,radius,blockTypeId, blockData)
 	elif msg[1] == 'resetShapePoints':
 	    shapePoints = []
             mcdrawing = minecraftstuff.MinecraftDrawing(mc)
