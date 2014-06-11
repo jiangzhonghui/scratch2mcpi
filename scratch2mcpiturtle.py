@@ -143,7 +143,7 @@ def listen(s, mc):
 	    print "mcdrawing.drawLine: (%d, %d, %d, %d, %d, %d, %d, %d)" % (x1,y1,z1,turtleX,turtleY,turtleZ,blockTypeId, blockData)
 	elif msg[1] == 'drawSphere':
 	    mcdrawing.drawSphere(turtleX,turtleY,turtleZ,radius,blockTypeId, blockData)          		  
-	    print "mcdrawing.drawSphere: (%d, %d, %d, %d, %d, %d)" % (x,y,z,radius,blockTypeId, blockData)
+	    print "mcdrawing.drawSphere: (%d, %d, %d, %d, %d, %d)" % (turtleX,turtleY,turtleZ,radius,blockTypeId, blockData)
 	elif msg[1] == 'drawCircle':
 	    mcdrawing.drawCircle(turtleX,turtleY,turtleZ,radius,blockTypeId, blockData)          		  
 	    print "mcdrawing.drawCircle: (%d, %d, %d, %d, %d, %d)" % (turtleX,turtleY,turtleZ,radius,blockTypeId, blockData)
