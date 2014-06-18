@@ -36,6 +36,14 @@ $ wget http://naominix.github.io/install.sh
 
 $ cat install.sh | sh
 
+or 
+
+$ wget -O - https://naominix.github.io/install.sh | sh
+
+or
+
+$ curl https://naominix.github.io/install.sh | sh
+
 ## Getting Started
 
 1. Install Scratch2MCPI with MGT + MS by install.sh. 
