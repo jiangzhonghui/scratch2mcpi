@@ -39,8 +39,8 @@ $ cat install.sh | sh
 ## Getting Started
 
 1. Install Scratch2MCPI with MGT + MS by install.sh. 
-2. Run the script. -> $ python scratch2mcpiturtle.py
-
+2. Launch Minecraft and launch Scratch(Normal).
+3. Run the script. -> $ python scratch2mcpiturtle.py
 
 ## Requirements
 
