@@ -30,12 +30,17 @@ Install Scratch2MCPI
 
 ## Installation
 
-Make file [install.sh](https://gist.github.com/naominix/976e6b451ff861460b86) in the /home/pi/ directory.
+Change /home/pi/ directory.
+
+$ wget http://naominix.github.io/install.sh
+
+$ cat install.sh | sh
 
 ## Getting Started
 
 1. Install Scratch2MCPI with MGT + MS by install.sh. 
 2. Run the script. -> $ python scratch2mcpiturtle.py
+
 
 ## Requirements
 
