@@ -32,17 +32,22 @@ Install Scratch2MCPI
 
 Change /home/pi/ directory.
 
-$ wget http://naominix.github.io/install.sh
-
+```
+$ wget https://naominix.github.io/install.sh
 $ cat install.sh | sh
+```
 
 or 
 
+```
 $ wget -O - https://naominix.github.io/install.sh | sh
+```
 
 or
 
+```
 $ curl https://naominix.github.io/install.sh | sh
+```
 
 ## Getting Started
 
