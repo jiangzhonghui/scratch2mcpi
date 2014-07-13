@@ -10,7 +10,7 @@ import minecraftstuff
 import mcpi.block as block
 import time
 
-VERSION = "1.0.3b"
+VERSION = "1.0.3c"
 localedir = os.path.join(os.path.dirname(__file__), 'locale')
 _ = gettext.translation(domain = 'scratch2mcpi', localedir = localedir, fallback = True).ugettext
 
@@ -58,6 +58,7 @@ def listen(s, mc):
   turtleX = 0
   turtleY = 0
   turtleZ = 0
+  angle = 0
   penBlockId = block.DIRT.id
   penBlockData = 0
   mc = minecraft.Minecraft.create()
@@ -136,6 +137,20 @@ def listen(s, mc):
 	elif msg[1] == 'setPenBlockData':
 	    steve.penblock(penBlockId, penBlockData)          		  
 	    print "steve.penblock: (%s, %d)" % (penBlockId, penBlockData)
+	elif msg[1] == 'penup':
+	    steve.penup()          		  
+	    print "steve.penup"
+	elif msg[1] == 'pendown':
+	    steve.pendown()          		  
+	    print "steve.pendown"
+	elif msg[1] == 'setHeading':
+          if is_number(mc, 'angle', angle) :
+	    steve.setheading(angle)          		  
+	    print "steve.setheading: (%d)" % (angle)
+	elif msg[1] == 'setVerticalHeading':
+          if is_number(mc, 'angle', angle) :
+	    steve.setverticalheading(angle)          		  
+	    print "steve.setverticalheading: (%d)" % (angle)
         # Minecraft Graphics Turtle(End)
         # Minecraft Stuff(Start)
 	elif msg[1] == 'drawLine':
@@ -231,6 +246,7 @@ def listen(s, mc):
         turtleX = msg[1].get('turtleX', turtleX)
         turtleY = msg[1].get('turtleY', turtleY)
         turtleZ = msg[1].get('turtleZ', turtleZ)
+        angle = msg[1].get('angle', angle)
         penBlockId = msg[1].get('penBlockId', penBlockId)
         penBlockData = msg[1].get('penBlockData', penBlockData)
         # Minecraft Graphics Turtle(Start)
@@ -282,6 +298,8 @@ def main():
       s.broadcast("setPenBlockData")
       s.broadcast("penup")
       s.broadcast("pendown")
+      s.broadcast("setHeading")
+      s.broadcast("setVerticalHeading")
       # Minecraft Graphics Turtle(End)
       # Minecraft Stuff(Start)
       s.broadcast("drawSphere")
