@@ -58,7 +58,7 @@ def listen(s, mc):
   turtleX = 0
   turtleY = 0
   turtleZ = 0
-  angle = 0
+  headingangle = 0
   penBlockId = block.DIRT.id
   penBlockData = 0
   mc = minecraft.Minecraft.create()
@@ -142,13 +142,13 @@ def listen(s, mc):
 	    steve.pendown()
 	    print "steve.pendown"
 	elif msg[1] == 'setHeading':
-          if is_number(mc, 'angle', angle) :
-	    steve.heading(angle)
-	    print "steve.heading: (%d)" % (angle)
+          if is_number(mc, 'headingangle', headingangle) :
+	    steve.setheading(headingangle)
+	    print "steve.setheading: (%d)" % (headingangle)
 	elif msg[1] == 'setVerticalHeading':
-          if is_number(mc, 'angle', angle) :
-	    steve.verticalheading(angle)
-	    print "steve.verticalheading: (%d)" % (angle)
+          if is_number(mc, 'headingangle', headingangle) :
+	    steve.setverticalheading(headingangle)
+	    print "steve.setverticalheading: (%d)" % (headingangle)
         # Minecraft Graphics Turtle(End)
         # Minecraft Stuff(Start)
 	elif msg[1] == 'drawLine':
@@ -244,7 +244,7 @@ def listen(s, mc):
         turtleX = msg[1].get('turtleX', turtleX)
         turtleY = msg[1].get('turtleY', turtleY)
         turtleZ = msg[1].get('turtleZ', turtleZ)
-        angle = msg[1].get('angle', angle)
+        headingangle = msg[1].get('headingangle', headingangle)
         penBlockId = msg[1].get('penBlockId', penBlockId)
         penBlockData = msg[1].get('penBlockData', penBlockData)
         # Minecraft Graphics Turtle(Start)
