@@ -91,7 +91,7 @@ def listen(s, mc, localmc):
           localmc.postToChat("hello local minecraft")
         elif msg[1] == 'setPos':
           if (is_number(mc, "mcpiX", mcpiX) and is_number(mc, "mcpiY", mcpiY) and is_number(mc, "mcpiZ", mcpiZ)): 
-            mc.player.setPos(mcpiX, mcpiY, mcpiZ)
+            localmc.player.setPos(mcpiX, mcpiY, mcpiZ)
             print "setPos: %.1f %.1f %.1f" % (mcpiX, mcpiY, mcpiZ)
         elif msg[1] == 'setBlock':
           if (is_number(mc, 'mcpiX', mcpiX) and is_number(mc, 'mcpiY', mcpiY) and is_number(mc, 'mcpiZ', mcpiZ) and is_number(mc, 'blockTypeId', blockTypeId) and is_number(mc, 'blockData', blockData)):
