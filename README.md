@@ -26,7 +26,7 @@ Install Scratch2MCPI
 
 [scratchpy](https://github.com/pilliq/scratchpy)
 
-## Scratch2MCPITurtle(Scratch2MinecraftPi With [Minecraft Graphics Turtle](http://www.stuffaboutcode.com/2014/05/minecraft-graphics-turtle.html) + [Minecraft Stuff](https://github.com/martinohanlon/minecraft-stuff)
+## Scratch2MCPI Nasu-Lab flavor (Scratch2MinecraftPi With [Minecraft Graphics Turtle](http://www.stuffaboutcode.com/2014/05/minecraft-graphics-turtle.html) + [Minecraft Stuff](https://github.com/martinohanlon/minecraft-stuff) )
 
 ## Installation
 
