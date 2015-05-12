@@ -1,5 +1,7 @@
 ## Scratch2MCPI Nasu-Lab flavor (Scratch2MinecraftPi With [Minecraft Graphics Turtle](http://www.stuffaboutcode.com/2014/05/minecraft-graphics-turtle.html) + [Minecraft Stuff](https://github.com/martinohanlon/minecraft-stuff) )
 
+![3D Nautilus](http://nasulab.wp.xdomain.jp/wp-content/uploads/2015/02/3dnautilus1-1038x576.png)
+
 ## Installation
 
 Change /home/pi/ directory.
