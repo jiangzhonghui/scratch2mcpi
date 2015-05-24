@@ -2,6 +2,13 @@
 
 ![3D Nautilus](http://nasulab.wp.xdomain.jp/wp-content/uploads/2015/02/3dnautilus1-1038x576.png)
 
+## Supported Environment
+
+* Spigot Server with RaspberryJuice for bukkit
+* CanaryMod Server with CanaryRaspberryJuice
+* MinecraftEDU Server with MCPI API Mod
+* Minecraft + Forge + MCPI API Mod
+
 ## Installation
 
 Change /home/pi/ directory.
