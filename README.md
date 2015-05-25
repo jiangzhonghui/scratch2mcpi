@@ -4,10 +4,11 @@
 
 ## Supported Environment
 
-* Spigot Server with RaspberryJuice for bukkit
-* CanaryMod Server with CanaryRaspberryJuice
-* MinecraftEDU Server with MCPI API Mod
-* Minecraft + Forge + MCPI API Mod
+* Minecraft Pi on Raspberry Pi (Singleplayer/Multiplayer)
+* Spigot Server with RaspberryJuice for bukkit (Singleplayer/Multiplayer)
+* CanaryMod Server with CanaryRaspberryJuice (Singleplayer/Multiplayer)
+* MinecraftEDU Server with MCPI API Mod (Singleplayer/Multiplayer)
+* Minecraft + Forge + MCPI API Mod (Singleplayer/Multiplayer)
 
 ## Installation
 
