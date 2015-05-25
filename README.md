@@ -73,4 +73,9 @@ Install Scratch2MCPI
 
 [scratchpy](https://github.com/pilliq/scratchpy)
 
+## Special Thanks
+
+J.Ishihara
+
+Martin O'Hanlon
 
