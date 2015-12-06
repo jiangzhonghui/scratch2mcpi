@@ -37,7 +37,7 @@ $ curl https://naominix.github.io/install.sh | sh
 2. Launch Minecraft and launch Scratch(Normal).
 3. Run the script. -> $ python scratch2mcpiturtle.py
 
-## Getting Started 2 (Multi Player Mode for Client Script)
+## Getting Started 2 (Multi Player Mode Client Script)
 
 scratch2mcpiturtleMultiClient.py
 
