@@ -31,11 +31,19 @@ or
 $ curl https://naominix.github.io/install.sh | sh
 ```
 
-## Getting Started
+## Getting Started 1 (Single Player Mode)
 
 1. Install Scratch2MCPI with MGT + MS by install.sh. 
 2. Launch Minecraft and launch Scratch(Normal).
 3. Run the script. -> $ python scratch2mcpiturtle.py
+
+## Getting Started 2 (Multi Player Mode for Client Script)
+
+scratch2mcpiturtleMultiClient.py
+
+## Getting Started 3 (for PC version Minecraft)
+
+scratch2mcpiturtleMC4PC.py
 
 ## Requirements
 
