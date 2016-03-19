@@ -5,8 +5,8 @@ import os
 import gettext
 import scratch
 import mcpi.minecraft as minecraft
-import minecraftturtle
-import minecraftstuff
+import mcturtle.minecraftturtle as turtle
+import mcstuff.minecraftstuff as stuff
 import mcpi.block as block
 import time
 
@@ -63,7 +63,7 @@ def listen(s, mc):
   penBlockData = 0
   mc = minecraft.Minecraft.create()
   pos = mc.player.getPos()
-  steve = minecraftturtle.MinecraftTurtle(mc,pos)
+  steve = turtle.MinecraftTurtle(mc,pos)
   spos = steve.position
   # Minecraft Graphics Turtle(End)
   # Minecraft Stuff(Start)
@@ -73,7 +73,7 @@ def listen(s, mc):
   z1 = 0
   shapePoints = []
   fill = True
-  mcdrawing = minecraftstuff.MinecraftDrawing(mc)
+  mcdrawing = stuff.MinecraftDrawing(mc)
   # Minecraft Stuff(End)
 
 
@@ -95,7 +95,7 @@ def listen(s, mc):
             print "setBlock: %d %d %d %d %d" % (mcpiX, mcpiY, mcpiZ, blockTypeId, blockData)
         # Minecraft Graphics Turtle(Start)
 	elif msg[1] == 'initTurtle':
-            steve = minecraftturtle.MinecraftTurtle(mc,spos)
+            steve = turtle.MinecraftTurtle(mc,spos)
 	    print "steve.__init__"
         elif msg[1] == 'setPosTurtle':
           if (is_number(mc, "turtleX", turtleX) and is_number(mc, "turtleY", turtleY) and is_number(mc, "turtleZ", turtleZ)): 
@@ -162,7 +162,7 @@ def listen(s, mc):
 	    print "mcdrawing.drawCircle: (%d, %d, %d, %d, %d, %d)" % (turtleX,turtleY,turtleZ,radius,blockTypeId, blockData)
 	elif msg[1] == 'resetShapePoints':
 	    shapePoints = []
-            mcdrawing = minecraftstuff.MinecraftDrawing(mc)
+            mcdrawing = stuff.MinecraftDrawing(mc)
 	elif msg[1] == 'setShapePoints':
 	    shapePoints.append(minecraft.Vec3(int(x1),int(y1),int(z1)))
 	    print "append.shapePoints:"
